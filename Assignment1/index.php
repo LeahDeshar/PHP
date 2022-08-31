@@ -20,11 +20,15 @@
       //-->By passing zero (0) in error_reporting function, you can remove all errors,
       // warnings, notices, and parse messages. 
       //-->allows developers to use undeclared variables. 
+      //this is not a good to use
+      
         $x_name = $_GET["x_name"];
         $x_age = $_GET["x_age"];
         echo "So your name is " . $x_name ." and your age is " . $x_age;
+        
      ?>
      <h2>Using Form</h2>
+     
      <form action = "index.php" method = "GET">
          Name: <input type = "text" name = "name" /><br>
          Age: <input type = "text" name = "age" /><br>
