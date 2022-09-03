@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="style.css">
-
+    <title>Document</title>
     <style>
         h2 
         {
@@ -16,8 +15,8 @@
 </head>
 <body>
     <h2>Simple interest Calculator</h2>
-    <h3>Using Get method</h3>
-    <form action="class.php" method="GET">
+    <h3>Using POST method</h3>
+    <form action="classII.php" method="POST">
     <!-- using get is not secure -->
         <label for="">Principle
          <input type="number" name="p"><br></label>
@@ -28,9 +27,9 @@
     <pre>
     <?php 
      $message = [];
-     if(!empty($_GET)){
+     if(!empty($_POST)){
 
-        if(!isset($_GET['p']) || empty($_GET['p']) )
+        if(!isset($_POST['p']) || empty($_POST['p']) )
         {
             // this function def
             //boolean
@@ -38,16 +37,16 @@
             //of principle or not
             $message[]= "Principle is not set!";
         }
-        if(!isset($_GET['r']) || empty($_GET['r'])) {
+        if(!isset($_POST['r']) || empty($_POST['r'])) {
             $message[] = "Rate is not set!";
         }
 
-        if(!isset($_GET['t']) || empty($_GET['t'])) {
+        if(!isset($_POST['t']) || empty($_POST['t'])) {
             $message[] = "Time is not set!";
         }
-     $principle = $_GET['p'];
-     $rate = $_GET['r'];
-     $time = $_GET['t'];
+     $principle = $_POST['p'];
+     $rate = $_POST['r'];
+     $time = $_POST['t'];
 
         
      if(!empty($principle) && !empty($rate) && !empty($time)) {
